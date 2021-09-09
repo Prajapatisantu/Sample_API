@@ -1,0 +1,23 @@
+<h3>Fire Post Request to Api Create Article</h3> 
+<%= notice %>
+  <div class="container">
+    <%= form_with do |f| %>
+      <% if user_signed_in? %> 
+        <label for="fname">Title:</label><br>
+        <%= f.text_field :fname, id: 'title' %><br>
+        <label for="lname">Content:</label><br>
+        <%= f.text_field :lname, id: 'content' %><br><br>
+        <%= f.submit "Submit", id: "registerUserFormSubmit" %><br>
+      <% end %>
+
+      <% if !user_signed_in? %> 
+        <label for="fname">Title:</label><br>
+        <%= f.text_field :fname, id: 'title' %><br>
+        <label for="lname">Content:</label><br>
+        <%= f.text_field :lname, id: 'content' %><br>
+        <label for="token">Auth token:</label><br>
+        <%= f.text_field :auth_token, id: 'token' %><br><br>
+        <%= f.submit "Submit", id: "formSubmit" %>
+      <% end %>
+    <% end %>
+  </div>

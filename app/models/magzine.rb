@@ -1,0 +1,2 @@
+class Magzine < ApplicationRecord
+end
